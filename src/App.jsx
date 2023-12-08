@@ -13,7 +13,9 @@ function App() {
 
   //movie search function
   const movieSearch=async(inputMovieSearch)=>{
-    const response = await fetch(`${API_URL}&s=${inputMovieSearch}`); //fecth from API
+    const response = await fetch(`${API_URL}&s=${inputMovieSearch}`,{
+      referrerPolicy:'unsafe-url'
+    }); //fecth from API
     const data = await response.json(); //extract the JSON from the response. Using the json method
 
     setMovieObject(data.Search);
